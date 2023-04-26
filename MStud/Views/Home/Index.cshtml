@@ -1,0 +1,44 @@
+﻿@model MStud.Models.ViewModels.LoginVM
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+
+<form method="post">
+    <div class="border p-3 mt-4" style="background-color:lightgray;">
+
+        <div class="row pb-2">
+            <h2 class="text-info">Login</h2>
+            <hr />
+        </div>
+
+        <div class="mb-3">
+            <label> AdminEmail </label>
+            <input class="form-control" asp-for="Email" placeholder="Enter your Name" />
+            <span asp-validation-for="Email"></span>
+        </div>
+
+        <div class="mb-3">
+            <label> AdminPassword </label>
+            <input type="password" class="form-control" asp-for="Password" placeholder="Enter your Password" />
+            <span asp-validation-for="Password"></span>
+        </div>
+
+        <div class="mb-3">
+            <br />
+            <button type="submit" class="btn btn-primary" style="width:150px">Login</button>
+
+            @*<button class="btn btn-info" type="submit" asp-controller="Home" asp-action="Index"> Login </button>*@
+
+        </div>
+
+    </div>
+</form>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}
+
